@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;1,300;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="/static/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Blogger</title>
+</head>
+
+<body>
+    <div class="section-wrapper">
+        <section class="navbar">
+            <nav>
+                <div class="page-logo">
+                    <div class="logo">
+
+                        <p><a href="/">The Blogger</a></p>
+                    </div>
+                </div>
+                <div class="main-menus" style={{#if user}} "justify-content: flex-start" {{else}}"justify-content: flex-end"{{/if}}>
+                    <div class="menu-items" >
+                        <ul class="menu-anchors" id="myLinks">
+                            
+                            <li><a href="/">Home</a></li>
+                            <li id="dropdown-link">
+                                <a href="javascript:void(0)">Category</a>
+                                <ul class="dropdown-content">
+                                    <li><a href="/category/school">School</a></li>
+                                    <li><a href="/category/technology">Technology</a></li>
+                                    <li><a href="/category/nature">Nature</a></li>
+                                    <li><a href="/category/cars">Cars</a></li>
+                                    <li><a href="/category/space">Space</a></li>
+                                    <li><a href="/category/life-style">Life Style</a></li>
+                                    <li><a href="/category/wealth">Wealth</a></li>
+
+                                </ul>
+                            </li>
+
+                            <li><a href="/about">About</a></li>
+                            
+                            {{!-- Log out user --}}
+                            
+                            {{!-- Log in user --}}
+                            {{#if user}}
+                            <li><a href="/blog/create">Create</a></li>
+                            <li><a href="/blog/favourites">Favourite</a></li> 
+                            <li><a href="/auth/logout">Logout</a></li> 
+                            {{else}}
+                            <li><a href="/auth/login">Login</a></li>
+                            <li><a href="/auth/register">Register</a></li>
+                            {{/if}}
+                        </ul>
+
+                    </div>
+                    {{#if user}}
+                    {{!-- Show is user is logged in --}}
+                    <div class="profile-card">
+                        <img src="/static/images/avatar.png" alt="">
+                        <p>{{user.username}}</p>
+                    </div>
+                    {{/if}}
+                    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                </div>
+            </nav>
+        </section>
+        <div class="content-editor">
+
+        </div>
+        
+        <section class="main-content">
+            
+            {{{body}}}
+        </section>
+    </div>
+</body>
+
+</html>

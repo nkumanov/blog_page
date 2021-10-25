@@ -1,0 +1,27 @@
+<section class="content-blog">
+    {{#if data}}
+    {{#each data}}
+    <div class="blog-wrapper">
+        <span class="example"><a href="/blog/details/{{this._id}}"></a></span>
+        <article class="blog-head">
+            <img src="{{imageUrl}}" alt="" class="blog-image">
+        </article>
+        <article class="blog-body">
+            <div class="blog-body-content">
+                <p>{{description}}</p>
+            </div>
+            <div class="blog-menu-items">
+                <div class="left-content">
+                    <a href="/blog/details/{{this._id}}">Read More <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+                <div class="right-content">
+                    <span>{{comments}} comments</span>
+                    <span>Author: {{this.author.username}}</span>
+
+                </div>
+            </div>
+        </article>
+    </div>
+    {{/each}}
+    {{/if}}
+</section>

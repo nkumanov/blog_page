@@ -1,0 +1,37 @@
+<section class="edit-form">
+    <h2>Create new blog post</h2>
+
+    <form action="/blog/create" method="POST">
+
+        <div class="form-element">
+            <p>Title: </p>
+            <label for="title"><input type="text" id="title" name="title" placeholder="Title"></label>
+
+        </div>
+        <div class="form-element">
+            <p>Category: </p>
+            <label for="category"><select name="category" id="category">
+                    <option value="school">School</option>
+                    <option value="technology">Technology</option>
+                    <option value="nature">Nature</option>
+                    <option value="cars">Cars</option>
+                    <option value="space">Space</option>
+                </select></label>
+
+        </div>
+        <div class="form-element">
+            <p>Description: </p>
+            <label for="description"><textarea name="description" id="description" cols="40" rows="20"
+                    placeholder="Put your description here"></textarea></label>
+
+        </div>
+        <div class="form-element">
+            <p>Image: </p>
+            <label for="imageUrl"><input type="text" id="imageUrl" name="imageUrl" placeholder="imageUrl"></label>
+
+        </div>
+        <div class="form-element">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</section>
